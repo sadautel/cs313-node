@@ -14,5 +14,9 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "start": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sadautel/cs313-node.git"
   }
 }
