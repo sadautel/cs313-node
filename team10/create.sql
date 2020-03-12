@@ -1,3 +1,4 @@
+
 CREATE TABLE person
 ( id         SERIAL       NOT NULL PRIMARY KEY
 , first_name VARCHAR(50)  NOT NULL
@@ -17,5 +18,7 @@ INSERT INTO person(first_name, last_name, birth_date) VALUES
                   ('Andrew'
                   ,'Dautel'
                   , '04/06/1992'
-                  )
+                  );
+
+
                   
