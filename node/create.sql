@@ -11,12 +11,9 @@ CREATE TABLE person
 );
 
 INSERT INTO person(firstName, lastName, phone, email) VALUES
-  ('Thomas'
-  , 'Burton'
+  ('Savannah'
+  , 'Dautel'
   , '801-530-9905'
   ,'sadautel@gmail.com'
   );
 
-CREATE USER savannah WITH PASSWORD =  'sadautel';
-GRANT SELECT, UPDATE, DELETE, INSERT ON sudoku TO jordan;
-GRANT USAGE, SELECT ON SEQUENCE sudoku_id_seq TO jordan;
