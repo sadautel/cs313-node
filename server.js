@@ -1,13 +1,13 @@
 const express = require('express');
 var app = express();
-var getBoard = require('./getSignIn.js');
+var getSignIn = require('./getSignIn.js');
 const { Pool } = require('pg');
 
-const connectionString = process.env.DATABASE_URL || "postgres://futdxhkvnuuepy:f187d7af0a259f26677add7247aced689bd76f3d8be42fc721d4f0e38c3bd367@ec2-52-45-14-227.compute-1.amazonaws.com:5432/d137sulfnslg99/recipeDb";
+const connectionString = process.env.DATABASE_URL || "postgres://savannah:sadautel@localhost:5432/recipeDb";
 const pool = new Pool({connectionString: connectionString});
 
 
-app.set('port', process.env.PORT || 5000)
+app.set('port', process.env.PORT || 5432)
   // set up directory for static files
   .use(express.static(__dirname + '/public'))
   // set where are dynamic views will be stored
