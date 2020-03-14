@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/price" method="GET">
+            <h1>Postal Calculator</h1>
+            <div class="box">
+                <br>
+                <br>
+                <br>
+                <br>
+                <label>Weight:</label>
+                <input type="number" min="1" max="13" name="weight"></input>
+                <br>
+                <br>
+                <br>
+                <label>Type:</label>
+                <select id="type" name="type">
+                    <option value="Letters (Stamped)">Letters (Stamped)</option>
+                    <option value="Letters (Metered)">Letters (Metered)</option>
+                    <option value="Large Envelopes (Flats)">Large Envelopes (Flats)</option>
+                    <option value="First-Class Package Service—Retail">First-Class Package Service—Retail</option>
+                </select>
+                <br>
+                <br>
+                <button class="btn btn-secondary" type="submit">Calculate</button>
+            </div>
+    </form>
+</body>
+</html>
