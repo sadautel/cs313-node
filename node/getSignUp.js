@@ -5,10 +5,13 @@ const pool = new Pool({connectionString: connectionString});
 function getSignIn(req, res) {
    console.log("Sending info to another file");
 
-   var name = req.query.name;
-   var password = req.query.password;
+   var firstName = req.query.firstName;
+   var lastName = req.query.lastName;
+   var phone = req.query.phone;
+   var email = req.query.email;
+  
 
-   getBoardFromDB(function(error, result) {
+   getPersonFromDB(function(error, result) {
       console.log("Database results:" , result);
 
       if (error || result == null || result.length != 1) {
@@ -34,4 +37,4 @@ function getPersonFromDb(id, callback) {
       callback(null, result.rows);
    });
 }
-module.exports = {getSignIn: getSignIn};
+module.exports = {getSignUp: getSignUp};
