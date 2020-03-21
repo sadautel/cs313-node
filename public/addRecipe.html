@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>EAT to LIVE</h1> 
+  </header>
+  <form action="home.html" method="POST">
+    <h2> Recipe Name: </h2>
+    <textarea type="text" name="rname" placeholder="Enter recipe name:" rows="2" cols="50" style="resize: none;"></textarea><br><br>
+    <h2> Enter a short sweet description: </h2>
+    <textarea type="text" name="desc" rows="4" cols="50" style="resize: none;"> </textarea><br>
+    <h2> Add a Picture! </h2>
+    <input type="file" name="file">
+    <h2> Enter Prep/Cook Time:</h2>
+    <label for="prep"> Enter a prep time: (Format hh:mm Ex: 02:30) </label>
+    <input type="text" name="prep"><br><br>
+    <label for="cook"> Enter a cook time: (Format hh:mm Ex: 02:30) </label>
+    <input type="text" name="cook"><br>
+    <h2>Add Ingredients!</h2>
+    <div class="header">
+        <input type="text" id="myInput" name="ingredients[]" placeholder="Ingredients...">
+        <span onclick="newTodo()" class="addButton">+</span>
+    </div>
+    <h2>Add Directions!</h2>
+
+    <input type="text" id="myInput" name="ingredients[]" placeholder="Ingredients...">
+    <span onclick="newTodo()" class="addButton">+</span>
+    <br>
+    <br>
+    <input type="submit" name="submit">
+</form>
+      <ul id="myUL"></ul>
+    </form>
+<script>
+         var list = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < list.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  list[i].appendChild(span);
+}
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+function newTodo() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("Please enter!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+   </script>
+   </hmtl>
+</body>
+</html>
