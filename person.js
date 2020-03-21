@@ -35,5 +35,5 @@ function getSignUp(req, res) {
        callback(null, result.rows);
     });
  }
- module.exports = {getSignUp: getSignUp};
+ module.exports = {getSignUp};
  
