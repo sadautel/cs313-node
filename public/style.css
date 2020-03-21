@@ -65,3 +65,16 @@ form{
    
 }
 
+.c {
+    float: left;
+    margin-left: 5%;
+    width: 25%;
+    padding: 10px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .r::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
