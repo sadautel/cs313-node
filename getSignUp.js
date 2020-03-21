@@ -18,7 +18,7 @@ function getPerson(req, res) {
       {
       const person = result[0];
       const params = {person: result[0], navPath:partialDir};
-      response.render(parecipeDbth.join(rootDir,'display'), params);
+      response.render(parecipeDbth.join(rootDir,'signUp'), params);
       response.status(200).json(person);
       }
    });
