@@ -18,7 +18,7 @@ app.set('port', process.env.PORT || 5432)
   .get('/signUp', getSignUp.getPerson)
   // set default route and content
   .get('/', function(req, res) {
-    res.sendFile('signUp.html', { root: __dirname + "/public"});
+    res.sendFile('signUp.ejs', { root: __dirname + "/public"});
   })
   // run localhost
   .listen(app.get('port'), function() {
