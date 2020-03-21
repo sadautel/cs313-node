@@ -29,7 +29,7 @@ h1{
 
   
   li a:hover {
-    background-color:rgb(46, 100, 29);
+    background-color:rgb(138, 13, 13);
   }
 
   .column {
@@ -69,7 +69,8 @@ form{
     float: left;
     margin-left: 5%;
     width: 25%;
-    padding: 10px;
+    padding: 5px;
+    border: solid white;
   }
   
   /* Clearfix (clear floats) */
@@ -78,3 +79,5 @@ form{
     clear: both;
     display: table;
   }
+
+ 
