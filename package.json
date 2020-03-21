@@ -2,9 +2,9 @@
   "name": "yes",
   "version": "1.0.0",
   "description": "",
-  "main": "queryDB.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon queryDB.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
