@@ -1,5 +1,5 @@
-
-function getSignUp(req, res) {
+const pool = require('./server');
+function getPerson(req, res) {
    console.log("Sending info to another file");
 
    var firstName = req.query.firstName;
@@ -34,4 +34,4 @@ function getPersonFromDb(id, callback) {
       callback(null, result.rows);
    });
 }
-module.exports = {getSignUp: getSignUp};
+module.exports = {getPerson: getPerson};
