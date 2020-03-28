@@ -17,11 +17,44 @@
         <input name="password" type="text" required> 
         <br>
         <br>
-        <button class="btn btn-secondary mb-3">Sign in</button>
+        <button onclick="login()" class="btn btn-secondary mb-3">Sign in</button>
         <br>
         
         <br>
         </div>
     </form>
+    <script>
+        var mysql = require('mysql')
+        var con = mysql.createConnection({
+            host: "localhost",
+            database: "recipeDb"
+        })
+    
+        con.connect(function(err){
+            if(err)throw err;
+            con.queary("SELECT firstName, password FROM person", function(err, result, fields){
+                if(err)throw err;
+                console.log(result);
+            })
+        })
+
+        function login(name, password){
+
+        }
+        if (firstName != name){
+            throw "Wrong name";
+        }
+        else{
+
+        }
+
+        if(password != password){
+            throw "Wrong password";   
+        }
+        else{
+            
+        }
+       
+              </script>
 </body>
 </html>

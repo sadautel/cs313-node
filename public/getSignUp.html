@@ -32,5 +32,24 @@
             <button class="btn btn-secondary" type="submit">Create Account</button>
             </div>
     </form>
+
+    <script>
+        function recipeToDB(firstName, lastName, phone, email, password, callback) {
+    var sql = ('INSERT INTO add_recipes (firstName, lastName, phone, email, password) VALUES ($1::varchar, $2::varchar, $3::varchar, $4::varchar, $5::varchar)');
+
+    const params = [firstName, lastName, phone, email, password];
+
+    pool.query(sql, params, function (err) {
+        if (err) {
+            console.log("Error with database has occured");
+            console.log(err);
+            callback(err);
+        }
+        else {
+            callback(null);
+        }
+    });
+}
+    </script>
 </body>
 </html>

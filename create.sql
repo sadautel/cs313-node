@@ -6,13 +6,14 @@ CREATE TABLE person
 	firstName VARCHAR(50) NOT NULL,
 	lastName  VARCHAR(50) NOT NULL,
 	phone     VARCHAR(100) NOT NULL,
-	email     VARCHAR(100) NOT NULL
+	email     VARCHAR(100) NOT NULL,
+	password     VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE login
 (
 	id SERIAL NOT NULL PRIMARY KEY,
-	username VARCHAR(50) NOT NULL ,
+	fName INT NOT NULL REFERENCES person(id),
 	password VARCHAR(50) NOT NULL
 );
 
