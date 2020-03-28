@@ -61,19 +61,20 @@
               </div>
           </div>
           <script>
-    function getRecipeFromDb(id, callback) {
-   const sql = "SELECT * FROM person add_recipes";
-   pool.query(sql, function(err, result) {
-      if (err) {
-         console.log("Error with database has occured");
-         console.log(err);
-      }
+    var mysql = require('mysql')
+    var con = mysql.createConnection({
+        host: "localhost",
+        database: "recipeDb"
+    })
 
-      console.log("Found DB result " + JSON.stringify(result.rows));
-      callback(null, result.rows);
-   });
-   console.log(sql);
-}
+    con.connect(function(err){
+        if(err)throw err;
+        con.queary("SELECT * FROM add_recipes", function(err, result, fields){
+            if(err)throw err;
+            console.log(result);
+        })
+    })
+   
           </script>
       </form>
 </body>
