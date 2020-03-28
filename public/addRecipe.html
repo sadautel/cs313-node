@@ -12,7 +12,7 @@
   </header>
   <form action="home.html" method="GET">
     <h2> Recipe Name: </h2>
-    <textarea type="text" name="rname" placeholder="Enter recipe name:" rows="2" cols="50" style="resize: none;"></textarea><br><br>
+    <textarea type="text" name="r_name" placeholder="Enter recipe name:" rows="2" cols="50" style="resize: none;"></textarea><br><br>
     <h2> Enter a short sweet description: </h2>
     <textarea type="text" name="desc" rows="4" cols="50" style="resize: none;"> </textarea><br>
     <h2> Add a Picture! </h2>
@@ -23,6 +23,25 @@
     <label for="cook"> Enter a cook time: (Format hh:mm Ex: 02:30) </label>
     <input type="text" name="cook"><br>
     <h2>Add Ingredients!</h2>
+
+    <script>
+        function recipeToDB(r_name, desc, prep, cook, ingredients, callback) {
+    var sql = ('INSERT INTO add_recipes (recipe_name, recipe_description, prep_time, cook_time, ingredients) VALUES ($1::varchar, $2::varchar, $3::varchar, $4::varchar, $5::varchar)');
+
+    const params = [recipe_name, recipe_description, prep_time, cook_time, ingredients];
+
+    pool.query(sql, params, function (err) {
+        if (err) {
+            console.log("Error with database has occured");
+            console.log(err);
+            callback(err);
+        }
+        else {
+            callback(null);
+        }
+    });
+}
+    </script>
     <div class="header">
         <input type="text" id="myInput" name="ingredients[]" placeholder="Ingredients...">
         <span onclick="newTodo()" class="addButton">+</span>
@@ -82,7 +101,8 @@ function newTodo() {
     }
   }
 }
-   </script>
+</script>
+   
    </hmtl>
 </body>
 </html>

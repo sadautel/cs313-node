@@ -19,8 +19,10 @@ CREATE TABLE login
 
 CREATE TABLE add_recipes
 ( id SERIAL NOT NULL PRIMARY KEY
-, account_user INT NOT NULL REFERENCES person(id)
 , recipe_name VARCHAR(50) NOT NULL
+, recipe_description VARCHAR(100) NOT NULL
+, prep_time VARCHAR(100) NOT NULL
+, cook_time VARCHAR(100) NOT NULL
 , ingredients VARCHAR(100) NOT NULL
 );
 
