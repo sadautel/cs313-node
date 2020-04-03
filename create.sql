@@ -24,7 +24,7 @@ CREATE TABLE add_recipes
 , image_url TEXT
 , prep_time VARCHAR(100) NOT NULL
 , cook_time VARCHAR(100) NOT NULL
-,  ingredient TEXT [] NOT NULL
+,  ingredient TEXT NOT NULL
 );
 
 CREATE TABLE allergy
