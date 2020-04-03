@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="container">
+			<a href="/">
+				<h2 class="text-center" id="title">Receipe Ready</h2>
+			</a>
+			<div class="container mx-auto" style="max-width: 600px;">
+				<form role="form" method="post" action="/handleLogin">
+					<fieldset>
+						<h3>Login</h3>
+						<a href="/signup">Not a member? Sign up</a>
+						<div class="row my-3">
+							<div class="col">
+								<input type="text" name="uname" id="uname" class="form-control input-lg" placeholder="Email">
+							</div>
+						</div> <!-- /.row -->
+						<div class="row my-3">
+							<div class="col">
+								<input type="password" name="pword" id="pword" class="form-control input-lg" placeholder="Password">
+							</div>
+						</div> <!-- /.row -->
+						<div class="row my-3">
+							<div class="col">
+								<input type="submit" class="btn" value="Sign In">
+							</div>
+						</div> <!-- /.row -->
+
+					</fieldset>
+				</form>
+			</div> <!-- /.container -->
+
+		</div>
+</body>
+</html>

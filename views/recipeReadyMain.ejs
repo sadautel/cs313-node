@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (uid) {  %>
+        <a href="/signout">signout</a>
+        <% } else { %>
+        <a href="/login">login</a>
+        <% } %>
+      
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <a class="navbar-brand" href="/">Recipe Ready</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown ml-5">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Browse
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <!--we should have the id be the tag id-->
+                  <a class="dropdown-item" href="#" id="get-all">Get All</a>
+                </div>
+              </li>
+              <li>
+                <form class="form-inline my-2 my-lg-0 ml-2">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Find a recipe" aria-label="Search">
+                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </li>
+      
+            </ul>
+            <!--this will float right-->
+            <a class="nav-link text-white" href="/newRecipe">My Recipes</a>
+      
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+              </a>
+      
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+              </div>
+            </div>
+          </div>
+        </nav> <!-- /.navbar -->
+      
+        <main role="main" class="container">
+      
+          <div style="text-align: center;">click on the button in the 'Browse' dropdown and see the recipes appear below!
+          </div>
+          <div id="stuff"></div>
+      
+        </main><!-- /.container -->
+      
+        <script>
+          $(document).ready(() => {
+            $('#get-all').click(() => {
+              $.ajax({
+                url: '/getAll',
+                type: 'GET',
+                dataType: 'html',
+                success: (res) => {
+                  console.log(res);
+                  $('#stuff').html(res);
+                }
+              }).fail(err => {
+                console.log(err);
+              });
+            });
+          });
+        </script>
+</body>
+</html>

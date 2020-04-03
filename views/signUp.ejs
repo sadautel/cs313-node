@@ -8,7 +8,59 @@
 </head>
 
 <body>
- 
-   
+   <div class="container">
+      <a href="/">
+        <h2 class="text-center" id="title">Receipe Ready</h2>
+      </a>
+  
+      <div class="container mx-auto" style="max-width: 600px;">
+        <form role="form" method="post" action="/handleSignup">
+          <fieldset>
+            <h3>Sign up</h3>
+            <a href="/login">Already a member? Sign in!</a>
+            <% if (message){ %>
+            <div class="row">
+              <div class="col">
+                <p> <%= message %> </p>
+              </div>
+            </div>
+            <% } %>
+            <div class="row my-3">
+              <div class="col">
+                <input type="text" name="fname" id="fname" class="form-control input-lg" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" name="lname" id="lname" class="form-control input-lg" placeholder="Last name">
+              </div>
+            </div> <!-- /.row -->
+            <div class="row my-3">
+              <div class="col">
+                <input type="text" name="uname" id="uname" class="form-control input-lg" placeholder="Email">
+              </div>
+            </div> <!-- /.row -->
+            <div class="row my-3">
+              <div class="col">
+                <input type="password" name="pword1" id="pword1" class="form-control input-lg" placeholder="Password">
+              </div>
+            </div><!-- /.row -->
+            <div class="row my-3">
+              <div class="col">
+                <input type="password" name="pword2" id="pword2" class="form-control input-lg"
+                  placeholder="Confirm password">
+              </div>
+            </div><!-- /.row -->
+  
+            <div class="row my-3">
+              <div class="col">
+                <input type="submit" class="btn" value="Create my account">
+              </div>
+            </div>
+  
+          </fieldset>
+        </form>
+  
+      </div> <!-- /.container -->
+  
+    </div>
 </body>
 </html>
