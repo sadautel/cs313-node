@@ -14,8 +14,6 @@ app.set('port', process.env.PORT || 5432)
   .set('views', __dirname + '/views')
   // set default view engine
   .set('view engine', 'ejs')
-
-  
   // call functions when trying to play a game
   .get('/signUp', getSignUp.getPerson)
   // set default route and content
