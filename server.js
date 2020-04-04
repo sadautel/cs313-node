@@ -29,9 +29,9 @@ app.set('port', process.env.PORT || 5432)
 
  
   
-  app.post('/addNewRecipe', (req, res) => {
+  app.get('/addNewRecipe', (req, res) => {
     res.render('addNewRecipe', { root: __dirname + "/views"});
-    app.post('insertRecipe', recipeController.insertRecipe);
+    app.get('insertRecipe', recipeController.insertRecipe);
   })
   
   .listen(app.get('port'), function() {
