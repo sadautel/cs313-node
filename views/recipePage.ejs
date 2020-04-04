@@ -4,33 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Recipe Page</title>
 </head>
 <body>
     <div>
-        <h1 class="card-title"><%= recipe.title %> </h1>
-        <p class="card-text"><%= recipe.description %> </p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <h1><%= recipe.title %> </h1>
+        <p><%= recipe.description %> </p>
     </div>
     
-    <div class="col-md-6">
-        <img src="/example.jpeg" class="card-img" alt="an img">
+    <div>
+        <img src="allergy.jpeg" class="img" alt="img">
     </div>
 
     <div>
         <h2 class="">Ingredients</h2>
-        <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+        <ul>
           <% recipe.ingredient.forEach((ingredient) => { %>
-          <li class="border-bottom mb-3" style="padding-left: 42px;"><%= ingredient %> </li>
+          <li><%= ingredient %> </li>
           <% }); %>
         </ul>
       </div>
 
       <div>
-        <h2 style="margin-left: 0; padding-left: 0;">Directions</h2>
+        <h2>Directions</h2>
         <ol>
           <% recipe.method.forEach((step) => { %>
-          <li class="mb-3"><%= step %> </li>
+          <li><%= step %> </li>
           <% }); %>
         </ol>
       </div>
