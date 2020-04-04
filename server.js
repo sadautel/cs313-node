@@ -11,7 +11,7 @@ app.set('port', process.env.PORT || 5432)
   .set('view engine', 'ejs');
 
   app.get('/', (req, res) => {
-    res.render('recipeHome.html', { root: __dirname + "/views"})
+    res.render('recipeHome.html', { root: __dirname + "/public"})
   })
 
   app.get('/getAll', (req, res) => {
@@ -19,7 +19,7 @@ app.set('port', process.env.PORT || 5432)
   })
 
   app.get('/addNewRecipe', (req, res) => {
-    res.render('addNewRecipe.html', { root: __dirname + "/views"})
+    res.render('addNewRecipe.html', { root: __dirname + "/public"})
   })
 
   app.post('/insertRecipe', (req, res) => {
