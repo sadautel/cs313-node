@@ -8,25 +8,31 @@ app.set('port', process.env.PORT || 5432)
   // set where are dynamic views will be stored
   .set('views', __dirname + '/views')
   // set default view engine
-  .set('view engine', 'ejs');
+  .set('view engine', 'ejs')
+  // call functions when trying to play a game
+  // .get('/signUp', getSignUp.getPerson)
+  // // set default route and content
+  // .get('/', function(req, res) {
+  //   res.sendFile('getSignUp.html', { root: __dirname + "/public"});
+  // })
+  // run localhost
+
 
   app.get('/', (req, res) => {
-    res.render('recipeHome.html', { root: __dirname + "/public"})
-  })
+    res.render('recipeHome', { root: __dirname + "/views"});
+    app.get('/getAll', recipeController.getAll);
+    app.get('/viewRecipe/:id', recipeController.viewRecipe);
+  });
 
-  app.get('/getAll', (req, res) => {
-  app.render('getAll', recipeController.getAll);
-  })
+ 
 
   app.get('/addNewRecipe', (req, res) => {
-    res.render('addNewRecipe.html', { root: __dirname + "/public"})
-  })
+    res.render('addNewRecipe', { root: __dirname + "/views"});
+    app.get('insertRecipe', recipeController.insertRecipe);
+  });
 
-  app.post('/insertRecipe', (req, res) => {
-    app.post('insertRecipe', recipeController.insertRecipe)
-  })
   
   
   app.listen(app.get('port'), function() {
-  	console.log('Listening on port: ' + app.get('port'))
+  	console.log('Listening on port: ' + app.get('port'));
   });
