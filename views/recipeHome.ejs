@@ -3,8 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+  
     <style>
+ 
+header{
+   color: rgb(138, 13, 13);
+   border: solid rgb(46, 100, 29);
+   border-width: thick;
+}
+
+h1{
+    color: rgb(138, 13, 13);
+    font-size: 375%;
+}
+
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  
+  li a:hover {
+    background-color:rgb(138, 13, 13);
+  }
+
+  .column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
         ul {
     list-style-type: none;
     margin: 0;
