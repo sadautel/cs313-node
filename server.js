@@ -22,12 +22,12 @@ app.set('port', process.env.PORT || 5432)
   // run localhost
   app.get('/', (req, res) => {
     res.render('recipeHome', { root: __dirname + "/views"});
-    
+    app.get('/getAll', recipeController.getAll);
   });
 
   app.get('/newRecipe', (req, res) => {
     res.render('newRecipe', { root: __dirname + "/views"});
-  
+    app.post('/insertRecipe', recipeController.insertRecipe);
   })
   
   .listen(app.get('port'), function() {
