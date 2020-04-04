@@ -35,10 +35,10 @@ function getAll(req, res) {
   function insertRecipe(req, res) {
     // TODO sanitize input
     console.log("req: ", req.body);
-    //console.log(req.body.ingredient);
-    req.body.ingredient = req.body.ingredient.split('\r\n');
-    //console.log(req.body.ingredient);
-    req.body.method = req.body.method.split('\r\n');
+    console.log(req.body.ingredient);
+   // req.body.ingredient = req.body.ingredient.split('\r\n');
+    console.log(req.body.ingredient);
+   // req.body.method = req.body.method.split('\r\n');
     const recipe = req.body;
     recipeModel.insertRecipe(recipe, (err, results) => {
       if (err) {
