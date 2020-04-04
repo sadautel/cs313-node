@@ -7,6 +7,72 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(187, 53, 4);
+    border: rgb(90, 5, 5);
+  }
+
+ </style>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+          <div class="row">
+            <div class="column" >
+                <h1>EAT <br>to <br> LIVE</h1> 
+            </div>
+            <div class="column">
+              <img src="allergy.jpg" alt="Top Allergens" style="width:275%" height="300px">
+            </div>
+          </div>
+    </header>
+    
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="getSignUp.html">Create Account</a></li>
+        <li><a href="login.html">Sign in</a></li>
+        <li><a href="addRecipe.html">Add Recipe</a></li>
+        <li><a href="search.html">Search</a></li>
+      </ul> 
+      <form action="">
+        <div class="r">
+            <div class="c">
+                <img src="allergy.jpg" alt="Top Allergens" style="width:100%">
+                <br>
+                <p><b>Recipe Description</b></p>
+                <p>These pics are temporary</p>
+                <p>Pics will be a link to recipe pages</p>
+              </div>
+            <div class="c">
+              <img src="allergy.jpg" alt="Top Allergens" style="width:100%">
+              <br>
+              <p><b>Recipe Description</b></p>
+              <p>These pics are temporary</p>
+              <p>Pics will be a link to recipe pages</p>
+            </div>
+            <div class="c">
+                <img src="allergy.jpg" alt="Top Allergens" style="max-width:100%">
+                <br>
+                <p><b>Recipe Description</b></p>
+                <p>These pics are temporary</p>
+                <p>Pics will be a link to recipe pages</p>
+              </div>
+          </div>
+      </form>
+</body>
+</html>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <!--we should have the id be the tag id-->
         <a class="dropdown-item" href="#" id="get-all">Get All</a>
@@ -19,30 +85,8 @@
       </form>
     </li>
 
-  </ul>
+
   <!--this will float right-->
-  <a class="nav-link text-white" href="/newRecipe">My Recipes</a>
-
-  <div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      Dropdown link
-    </a>
-
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="#">Action</a>
-    </div>
-  </div>
-</div>
-</nav> <!-- /.navbar -->
-
-<main role="main" class="container">
-
-<div style="text-align: center;">click on the button in the 'Browse' dropdown and see the recipes appear below!
-</div>
-<div id="stuff"></div>
-
-</main><!-- /.container -->
 
 <script>
 $(document).ready(() => {
