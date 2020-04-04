@@ -29,3 +29,24 @@ function getRecipeById(id, callback) {
         callback(null, results.rows[0]);
       });
 }
+
+function insertRecipe(recipe, callback) {
+  console.log("Recipe to be inserted in recipeModel ", recipe);
+  let sql = "INSERT INTO add_recipes (recipe_name, recipe_description, prep_time, cook_time, ingredient) VALUES ($1, $2, $3, $4, $5, $6) RETURNING add_recipes (recipe_name, recipe_description, prep_time, cook_time, ingredients";
+  params = [recipe.recipe_name, recipe.recipe_description, recipe.prep_time, recipe.cook_time, recipe.ingredient];
+  pool.query(sql, params, (err, results) => {
+    if (err) {
+      console.log(err);
+      callback(err, null);
+    } else {
+      console.log("res.row.id", results.rows[0]);
+      callback(null, results.rows[0]);
+    }
+  });
+}
+
+module.exports = {
+  getAllFromDB: getAllFromDB,
+  getRecipeById: getRecipeById,
+  insertRecipe: insertRecipe,
+};

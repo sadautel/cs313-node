@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 class="card-title"><%= recipe.title %> </h1>
+        <p class="card-text"><%= recipe.description %> </p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+    
+    <div class="col-md-6">
+        <img src="/example.jpeg" class="card-img" alt="an img">
+    </div>
+
+    <div>
+        <h2 class="">Ingredients</h2>
+        <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+          <% recipe.ingredient.forEach((ingredient) => { %>
+          <li class="border-bottom mb-3" style="padding-left: 42px;"><%= ingredient %> </li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <div>
+        <h2 style="margin-left: 0; padding-left: 0;">Directions</h2>
+        <ol>
+          <% recipe.method.forEach((step) => { %>
+          <li class="mb-3"><%= step %> </li>
+          <% }); %>
+        </ol>
+      </div>
+
+</body>
+</html>
