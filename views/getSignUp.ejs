@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+            <h1>EAT to LIVE</h1> 
+      </header>
+    <form action="login.html" method="GET">
+            <h2>Create Account</h2>
+            <div class="box">
+                <p class="label">First name:</p>
+            <input name="firstName" type="text" required> 
+
+            <p class="label">Last Name:</p>
+            <input name="lastName" type="text" required> 
+
+            <p class="label">Phone number:</p>
+            <input name="phone" type="text" required> 
+
+            <p class="label">Email:</p>
+            <input name="email" type="text" required> 
+
+            <p class="label">Password:</p>
+            <input name="password" type="text" required> 
+            <br>
+            <br>
+            <button class="btn btn-secondary" type="submit">Create Account</button>
+            </div>
+    </form>
+
+    <script>
+        function recipeToDB(firstName, lastName, phone, email, password, callback) {
+    var sql = ('INSERT INTO add_recipes (firstName, lastName, phone, email, password) VALUES ($1::varchar, $2::varchar, $3::varchar, $4::varchar, $5::varchar)');
+
+    const params = [firstName, lastName, phone, email, password];
+
+    pool.query(sql, params, function (err) {
+        if (err) {
+            console.log("Error with database has occured");
+            console.log(err);
+            callback(err);
+        }
+        else {
+            callback(null);
+        }
+    });
+}
+    </script>
+</body>
+</html>

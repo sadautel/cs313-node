@@ -26,6 +26,17 @@
             <div class="column">
               <img src="allergy.jpg" alt="Top Allergens" style="width:275%" height="300px">
             </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <!--we should have the id be the tag id-->
+                <a class="dropdown-item" href="#" id="get-all">Get All</a>
+              </div>
+            </li>
+            <li>
+              <form class="form-inline my-2 my-lg-0 ml-2">
+                <input class="form-control mr-sm-2" type="text" placeholder="Find a recipe" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </li>
           </div>
     </header>
     
@@ -33,17 +44,13 @@
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="getSignUp.html">Create Account</a></li>
         <li><a href="login.html">Sign in</a></li>
-        <li><a href="addRecipe.html">Add Recipe</a></li>
+        <li><a href="addNewRecipe.html">Add Recipe</a></li>
         <li><a href="search.html">Search</a></li>
       </ul> 
       <form action="">
         <div class="r">
             <div class="c">
-                <img src="allergy.jpg" alt="Top Allergens" style="width:100%">
-                <br>
-                <p><b>Recipe Description</b></p>
-                <p>These pics are temporary</p>
-                <p>Pics will be a link to recipe pages</p>
+               
               </div>
             <div class="c">
               <img src="allergy.jpg" alt="Top Allergens" style="width:100%">
@@ -60,22 +67,30 @@
                 <p>Pics will be a link to recipe pages</p>
               </div>
           </div>
-          <script>
-    var mysql = require('mysql')
-    var con = mysql.createConnection({
-        host: "localhost",
-        database: "recipeDb"
-    })
-
-    con.connect(function(err){
-        if(err)throw err;
-        con.queary("SELECT * FROM add_recipes", function(err, result, fields){
-            if(err)throw err;
-          "<p> result<p>";
-        })
-    })
-   
-          </script>
       </form>
+</body>
+</html>
+  
+
+
+
+
+<script>
+$(document).ready(() => {
+  $('#get-all').click(() => {
+    $.ajax({
+      url: '/getAll',
+      type: 'GET',
+      dataType: 'html',
+      success: (res) => {
+        console.log(res);
+        $('#stuff').html(res);
+      }
+    }).fail(err => {
+      console.log(err);
+    });
+  });
+});
+</script>
 </body>
 </html>
