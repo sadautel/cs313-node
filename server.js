@@ -2,7 +2,6 @@ const express = require('express');
 var app = express();
 var recipeController = require('./controller/recipeController.js');
 
-const bodyParser = require('body-parser');
 
 app.set('port', process.env.PORT || 5432)
   // set up directory for static files
